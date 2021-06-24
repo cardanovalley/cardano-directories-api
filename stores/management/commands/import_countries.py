@@ -1,5 +1,6 @@
 import os, json
 
+from django.conf import settings
 from django.core.management.base import BaseCommand
 from stores.models import Country
 
@@ -9,7 +10,8 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
 
-        countries_json_path = "/home/nicky/git/ada_stores/backend/"
+        countries_json_path = settings.BASE_DIR
+
         with open(os.path.join(countries_json_path, "countries.json")) as f:
             data = json.load(f)
 
