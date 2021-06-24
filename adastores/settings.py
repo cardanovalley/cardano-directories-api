@@ -108,6 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+NICO_TEST = os.environ.get("NICO_TEST", "3")
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
