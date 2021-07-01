@@ -25,11 +25,16 @@ class Command(BaseCommand):
                 website = store["website"]
 
                 obj, created = Store.objects.get_or_create(
-                    name=name,
-                    picture=picture,
+                    # name=name,
+                    # picture=picture,
                     address=address,
-                    googlemaps=googlemaps,
+                    # googlemaps=googlemaps,
                     website=website,
+                    defaults={
+                        "name": name,
+                        "picture": picture,
+                        "googlemaps": googlemaps,
+                    },
                 )
 
                 if created:

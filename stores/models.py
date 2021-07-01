@@ -15,7 +15,7 @@ class Store(models.Model):
     name = models.CharField(max_length=150)
     picture = models.ImageField(upload_to="uploads/%Y/%m/%d/")
     address = models.CharField(max_length=200)
-    googlemaps = models.CharField(max_length=200)
+    googlemaps = models.CharField(max_length=200)  # Link to googlemap position
     website = models.CharField(max_length=200)
     country = models.ForeignKey(Country, models.SET_NULL, blank=True, null=True)
 
