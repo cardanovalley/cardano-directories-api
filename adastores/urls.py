@@ -38,7 +38,7 @@ class StoreSerializer(serializers.HyperlinkedModelSerializer):
             "website",
             "address",
             "country",
-            "googlemaps",
+            "googlemaps_link",
             "picture",
         ]
 
