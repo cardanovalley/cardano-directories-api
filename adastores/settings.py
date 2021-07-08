@@ -29,6 +29,11 @@ DEBUG = False
 
 ALLOWED_HOSTS = [".herokuapp.com"]
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:4200",
+    "http://payada.club",
+]
+
 
 # Application definition
 
@@ -41,9 +46,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "stores.apps.StoresConfig",
     "rest_framework",
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
