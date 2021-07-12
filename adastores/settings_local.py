@@ -25,6 +25,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:4200",
+    "http://payada.club",
+]
+
 
 # Application definition
 
@@ -37,9 +42,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "stores.apps.StoresConfig",
     "rest_framework",
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
