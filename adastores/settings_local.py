@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "0=#6&(g_qm&)qw*f6!l8ovpi7__62=f-6&*9vtu#&9up6(73-x"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [".herokuapp.com"]
 
@@ -37,6 +37,7 @@ CORS_ALLOWED_ORIGINS = [
 # Application definition
 
 INSTALLED_APPS = [
+    "whitenoise.runserver_nostatic",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -45,13 +46,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "stores.apps.StoresConfig",
     "rest_framework",
-    "corsheaders",
 ]
 
 MIDDLEWARE = [
-    "corsheaders.middleware.CorsMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -122,7 +121,7 @@ LANGUAGE_CODE = "en-us"
 
 TIME_ZONE = "America/Argentina/Buenos_Aires"
 
-USE_I18N = True
+USE_I18N = False
 
 USE_L10N = True
 
@@ -135,7 +134,9 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATIC_URL = "/static/"
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), os.path.join(BASE_DIR, "media"))
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
