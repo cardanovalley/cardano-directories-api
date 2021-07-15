@@ -161,4 +161,4 @@ django_heroku.settings(locals())
 # For serving media files with DropBox
 DEFAULT_FILE_STORAGE = "storages.backends.dropbox.DropBoxStorage"
 DROPBOX_OAUTH2_TOKEN = env("DROPBOX_AUTH_TOKEN")
-DROPBOX_ROOT_PATH = "media"
+DROPBOX_ROOT_PATH = "/media/"

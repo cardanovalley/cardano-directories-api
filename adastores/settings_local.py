@@ -17,7 +17,6 @@ import environ
 env = environ.Env()
 environ.Env.read_env()
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -38,14 +37,12 @@ CORS_ALLOWED_ORIGINS = [
     "http://payada.club",
     "https://nicky-eng.github.io",
     "https://nicky.world",
-    "http://localhost:4202",
 ]
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    "whitenoise.runserver_nostatic",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -55,12 +52,12 @@ INSTALLED_APPS = [
     "stores.apps.StoresConfig",
     "rest_framework",
     "corsheaders",
+    "storages",
 ]
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -162,3 +159,8 @@ REST_FRAMEWORK = {
 }
 
 django_heroku.settings(locals())
+
+# For serving media files with DropBox
+# DEFAULT_FILE_STORAGE = "storages.backends.dropbox.DropBoxStorage"
+DROPBOX_OAUTH2_TOKEN = env("DROPBOX_AUTH_TOKEN")
+DROPBOX_ROOT_PATH = "/media/"
