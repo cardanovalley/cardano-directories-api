@@ -28,7 +28,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [".herokuapp.com"]
 
@@ -159,6 +159,6 @@ django_heroku.settings(locals())
 
 
 # For serving media files with DropBox
-# DEFAULT_FILE_STORAGE = "storages.backends.dropbox.DropBoxStorage"
+DEFAULT_FILE_STORAGE = "storages.backends.dropbox.DropBoxStorage"
 DROPBOX_OAUTH2_TOKEN = env("DROPBOX_AUTH_TOKEN")
 DROPBOX_ROOT_PATH = "/media/"
