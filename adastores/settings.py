@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ["testing-cardano-back.herokuapp.com"]
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:4200",
     "http://payada.club",
+    "https://nicky.world",
 ]
 
 
