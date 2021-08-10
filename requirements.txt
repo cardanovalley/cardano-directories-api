@@ -1,14 +1,14 @@
 #Added using pip freeze
-appdirs==1.4.4
-black==21.6b0
-click==8.0.1
-dj-database-url==0.5.0
-django-filter==2.4.0
-Markdown==3.3.4
-mypy-extensions==0.4.3
-pathspec==0.8.1
-regex==2021.4.4
-toml==0.10.2
+# appdirs==1.4.4
+# black==21.6b0
+# click==8.0.1
+# dj-database-url==0.5.0
+# django-filter==2.4.0
+# Markdown==3.3.4
+# mypy-extensions==0.4.3
+# pathspec==0.8.1
+# regex==2021.4.4
+# toml==0.10.2
 
 # Manually added
 Django==3.1
