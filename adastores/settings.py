@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ["cardano-directory-back.herokuapp.com"]
 
 CORS_ALLOWED_ORIGINS = [
     "https://payada.club",
+    "localhost:4200",
 ]
 
 
