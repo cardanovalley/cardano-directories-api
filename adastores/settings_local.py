@@ -30,13 +30,11 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [".herokuapp.com", "localhost", "nicky-eng.github.io"]
+ALLOWED_HOSTS = [".herokuapp.com", "localhost"]
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:4200",
-    "http://localhost:39721",
     "http://payada.club",
-    "https://nicky-eng.github.io",
     "https://nicky.world",
 ]
 
@@ -160,7 +158,7 @@ REST_FRAMEWORK = {
         "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
     ],
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
-    "PAGE_SIZE": 1,
+    "PAGE_SIZE": 5,
 }
 
 django_heroku.settings(locals())
