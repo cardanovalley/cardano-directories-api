@@ -27,11 +27,14 @@ SECRET_KEY = os.environ["SECRET_KEY"]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["cardano-directory-back.herokuapp.com"]
+ALLOWED_HOSTS = [
+    "cardano-directory-back.herokuapp.com",
+    "testing-cardano-back.herokuapp.com",
+]
 
 CORS_ALLOWED_ORIGINS = [
     "https://payada.club",
-    "http://localhost:4200",
+    "https://nicky.world",
 ]
 
 
