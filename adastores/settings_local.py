@@ -34,7 +34,7 @@ ALLOWED_HOSTS = [".herokuapp.com", "localhost"]
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:4200",
-    "http://payada.club",
+    "https://payada.club",
     "https://nicky.world",
 ]
 

@@ -35,6 +35,7 @@ ALLOWED_HOSTS = [
 CORS_ALLOWED_ORIGINS = [
     "https://payada.club",
     "https://nicky.world",
+    "http://localhost:4200",
 ]
 
 
