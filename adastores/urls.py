@@ -13,45 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from time import sleep
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.contrib.auth.models import User
 from django.urls import path, include
-from rest_framework import routers, serializers, viewsets
-from stores.models import Store, Country
-
-
-class CountrySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Country
-        fields = ["name"]
-
-
-class StoreSerializer(serializers.HyperlinkedModelSerializer):
-    country = CountrySerializer(required=False, read_only=True)
-
-    class Meta:
-        model = Store
-        fields = [
-            "name",
-            "website",
-            "address",
-            "country",
-            "googlemaps_link",
-            "picture",
-        ]
-
-
-class StoreViewSet(viewsets.ModelViewSet):
-    queryset = Store.objects.all()
-    serializer_class = StoreSerializer
-
-
-class CountryViewSet(viewsets.ModelViewSet):
-    queryset = Country.objects.all()
-    serializer_class = CountrySerializer
+from rest_framework import routers
+from stores.views import StoreViewSet, CountryViewSet
 
 
 router = routers.DefaultRouter()

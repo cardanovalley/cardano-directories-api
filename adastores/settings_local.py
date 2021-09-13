@@ -34,6 +34,7 @@ ALLOWED_HOSTS = [".herokuapp.com", "localhost"]
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:4200",
+    "http://localhost:46461",
     "https://payada.club",
     "https://nicky.world",
 ]
@@ -154,9 +155,7 @@ MEDIA_URL = "/media/"
 # Django_REST_Framework
 
 REST_FRAMEWORK = {
-    "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
-    ],
+    "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.AllowAny"],
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 9,
 }
