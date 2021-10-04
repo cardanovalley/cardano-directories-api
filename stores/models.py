@@ -13,6 +13,7 @@ class Country(models.Model):
 
 class Store(models.Model):
     name = models.CharField(max_length=150)
+
     picture = models.ImageField(
         max_length=200, upload_to="stores/", blank=True, null=True
     )
@@ -25,3 +26,10 @@ class Store(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+    def save(
+        self, force_insert=False, force_update=False, using=None, update_fields=None
+    ):
+        if not self.website.startswith(("http://", "https://")):
+            self.website = "https://" + self.website
+        super().save(force_insert, force_update, using, update_fields)
