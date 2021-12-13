@@ -10,6 +10,6 @@ Deployed in Heroku, the serialized 'stores' information is sent to an Angular po
 
 
 Coming features:
-    *Upload your own store with reCAPTCHA validation
-    *Filters
-    *Search functionality
+    * Upload your own store with reCAPTCHA validation
+    * Filters
+    * Search functionality
